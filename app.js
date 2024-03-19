@@ -12,7 +12,7 @@ const { router } = require('./router/router');
 
 /* inisiasi cors */
 const cors = require('cors');
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 
 /* call port */
 const port = process.env.PORT || 3000;
@@ -24,7 +24,8 @@ let originOptionCors = {
 
 // middleware
 app.use(cors());
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
+app.use(express.urlencoded({extended: true}));
 
 /* call router */
 app.use('/', router);

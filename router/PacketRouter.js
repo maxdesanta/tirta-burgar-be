@@ -7,9 +7,9 @@ const { PacketController } = require('../Controller/PacketController');
 
 // router parameters
 packetRouter.get('/packets', PacketController.getPacketController)
-// packetRouter.get('/member/:id', MemberController.getMemberController);
+packetRouter.get('/packet/:id', PacketController.getDetailPacketController);
 packetRouter.post('/packet/add', PacketController.addPacketController);
-// packetRouter.put('/member/edit/:id', MemberController.getMemberController);
-// packetRouter.delete('/member/delete/:id', MemberController.getMemberController);
+packetRouter.put('/packet/edit/:id', PacketController.updatePacketController);
+packetRouter.delete('/packet/delete/:id', PacketController.deletePacketController);
 
 module.exports = { packetRouter };
